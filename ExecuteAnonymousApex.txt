@@ -1,0 +1,20 @@
+//instance of a class
+TestStaticVsNonStatic myTestClass = new TestStaticVsNonstatic('This String Is A Parameter');
+
+//accessing class variables
+System.debug('myStaticString: ' + TestStaticVsNonStatic.myStaticString); //we access via ClassName.VariableName
+System.debug('myNonStaticString: ' + myTestClass.myNonStaticString); //we access via InstanceName.VariableName
+
+//access instance of myStaticString
+//commented out because we expect an error
+//System.debug('myStaticString: ' + myTestClass.myStaticString); //we access via InstanceName.VariableName => get "static variable in non-static context error"
+
+//access class variable of myNonStaticString
+//commented out because we expect an error
+//System.debug('myNonStaticString: ' + TestStaticVsNonStatic.myNonStaticString); //we access via ClassName.VariableName => get "variable does not exist error" because we have not created an instance of the class
+
+//call static method
+TestStaticVsNonStatic.myStaticMethod(); //dot notation ClassName.MethodName()
+
+//call nonstatic method
+myTestClass.myNonStaticMethod(); //dot notation InstanceName.MethodName();
